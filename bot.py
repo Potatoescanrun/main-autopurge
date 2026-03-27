@@ -7,7 +7,7 @@ def run_purge():
     
     password = os.environ.get('PYWIKIBOT_PASSWORD')
     
-    manager = ClientLoginManager(site=site, user='YourBotName', password=password)
+    manager = ClientLoginManager(site=site, user='TRCDBot', password=password)
     manager.login()
 
     page = pywikibot.Page(site, "Main Page")
