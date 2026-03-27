@@ -1,3 +1,3 @@
 family = 'miraheze'
 mylang = 'industrialist'
-usernames['miraheze']['industrialist'] = 'TRCDBot
+usernames['miraheze']['industrialist'] = 'TRCDBot'
