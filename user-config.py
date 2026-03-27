@@ -1,4 +1,4 @@
-family = 'miraheze'
-mylang = 'aindustrialistbc'
-family_files['miraheze'] = 'https://industrialist.miraheze.org'
-usernames['miraheze']['industrialist'] = 'TRCDBot'
+family = 'wikipedia'
+mylang = 'industrialist'
+family_files['wikipedia'] = 'https://industrialist.miraheze.org'
+usernames['wikipedia']['industrialist'] = 'TRCDBot'
