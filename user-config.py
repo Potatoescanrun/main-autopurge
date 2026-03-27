@@ -1,6 +1,6 @@
 family_files = {}
 
 family = 'miraheze'
-mylang = 'miraheze'
+mylang = 'industrialist'
 family_files['miraheze'] = 'https://industrialist.miraheze.org'
-usernames['miraheze']['miraheze'] = 'TRCDBot'
+usernames['miraheze']['industrialist'] = 'TRCDBot@TRCDBot_AutoPurge'
