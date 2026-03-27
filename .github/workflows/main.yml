@@ -20,7 +20,12 @@ jobs:
       - name: Install Pywikibot
         run: pip install pywikibot
 
-      - name: Execute Bot
+      - name: Run Bot
         env:
-          PYWIKIBOT_PASSWORD: ${{ secrets.BOT_PASSWORD }}
-        run: python bot.py
+          # Use your secret here
+          RAW_PASS: ${{ secrets.BOT_PASSWORD }}
+        run: |
+          # Create the password file Pywikibot requires
+          # Format: (u'Username', u'Password')
+          echo "('TRCDBot@TRCDBot_AutoPurge', '$RAW_PASS')" > passwordfile
+          python bot.py
