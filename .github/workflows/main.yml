@@ -30,4 +30,4 @@ jobs:
           with open('passwordfile', 'w') as f:
               f.write(f"miraheze\tTest Account0\t{pw}\n")
           EOF
-          python bot.py
+          python pwb.py
