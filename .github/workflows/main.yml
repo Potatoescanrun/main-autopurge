@@ -25,9 +25,9 @@ jobs:
           RAW_PASS: ${{ secrets.PASSWORDFILE }}
         run: |
           python - <<'EOF'
-          import os
-          pw = os.environ['RAW_PASS']
-          with open('passwordfile', 'w') as f:
-              f.write(f"miraheze\tTest Account0\t{pw}\n")
-          EOF
-          python pwb.py
+      import os
+      pw = os.environ['RAW_PASS'].strip()
+      with open('passwordfile', 'w') as f:
+          f.write(f"miraheze\tTest Account0\t{pw}\n")
+      EOF
+        python bot.py
