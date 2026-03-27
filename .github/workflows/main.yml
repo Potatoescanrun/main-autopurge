@@ -28,6 +28,6 @@ jobs:
           import os
           pw = os.environ['RAW_PASS']
           with open('passwordfile', 'w') as f:
-              f.write(f"('miraheze', 'Test Account0', '{pw}')\n")
+              f.write(f"miraheze\tTest Account0\t{pw}\n")
           EOF
           python bot.py
