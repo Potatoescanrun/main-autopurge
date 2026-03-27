@@ -1,20 +1,24 @@
 import pywikibot
 import os
-from pywikibot.login import ClientLoginManager
 
 def run_purge():
     site = pywikibot.Site('industrialist', 'miraheze')
-    password = os.environ.get('PYWIKIBOT_PASSWORD')
     
-    # Use the full Account@BotName string here as well
-    manager = ClientLoginManager(site=site, user='TRCDBot@TRCDBot_AutoPurge', password=password)
-    manager.login()
+    password = os.environ.get('PYWIKIBOT_PASSWORD')
+    username = 'TRCDBot@TRCDBot_AutoPurge'
+    
+    site.login(user=username, password=password)
+    
+    if not site.logged_in():
+        print("Error: Login failed, still acting as IP.")
+        return
 
+    # 3. Purge the page
     page = pywikibot.Page(site, "Main Page")
     if page.purge():
-        print("Success")
+        print("Success: Page purged as logged-in user.")
     else:
-        print("Failure")
+        print("Failure: Purge failed.")
 
 if __name__ == "__main__":
     run_purge()
