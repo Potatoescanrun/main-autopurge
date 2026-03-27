@@ -19,10 +19,15 @@ jobs:
 
       - name: Install Pywikibot
         run: pip install pywikibot
-
-      - name: Run Bot
+        
+      - name: Create password file & run bot
         env:
           RAW_PASS: ${{ secrets.PASSWORDFILE }}
         run: |
-          printf "('miraheze', 'Test Account0', '%s')\n" "$RAW_PASS" > passwordfile
+          python - <<'EOF'
+          import os
+          pw = os.environ['RAW_PASS']
+          with open('passwordfile', 'w') as f:
+              f.write(f"('miraheze', 'Test Account0', '{pw}')\n")
+          EOF
           python bot.py
