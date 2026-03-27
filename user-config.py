@@ -1,7 +1,6 @@
-import pywikibot
+family_files = {}
 
-site_url = 'https://industrialist.miraheze.org'
-site = pywikibot.Site(url=site_url)
-family = site.family.name
-mylang = site.code
-usernames[family][mylang] = 'TRCDBot'
+family = 'miraheze'
+mylang = 'industrialist'
+family_files['miraheze'] = 'https://industrialist.miraheze.org'
+usernames['miraheze']['abc'] = 'TRCDBot'
